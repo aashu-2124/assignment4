@@ -1,0 +1,41 @@
+<div class="navbar bg-base-100 flex">
+    <!-- Left Side: Logo and Navbar Toggle Button -->
+    <div class="flex-1 flex items-center">
+        <a class="btn btn-ghost normal-case text-xl" href="/">Lego Collection</a>
+    </div>
+
+    <!-- Responsive Navbar Toggle Button -->
+    <div class="sm:hidden">
+        <div id="navbarDropdown" class="dropdown">
+            <label tabindex="0" class="btn btn-ghost">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </label>
+            <ul tabindex="0" class="menu dropdown-content right-0 mt-3 z-10 p-2 bg-base-100 rounded-box w-36 hidden">
+                <li><a class="<%= page === '/lego/sets' ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+                <li><a class="<%= page === '/about' ? 'active' : '' %>" href="/about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Center: Navbar Links for Larger Screens -->
+    <div class="navbar-center hidden sm:flex">
+        <ul class="menu menu-horizontal px-1">
+            <li>
+                <a class="<%= page === '/lego/sets' ? 'active' : '' %>" href="/lego/sets">View Collection</a>
+            </li>
+            <li>
+                <a class="<%= page === '/about' ? 'active' : '' %>" href="/about">About</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // JavaScript to handle dropdown toggle
+    document.getElementById('navbarDropdown').addEventListener('click', function() {
+        var dropdownMenu = document.querySelector('.dropdown-content');
+        dropdownMenu.classList.toggle('hidden'); // Toggle the 'hidden' class to show/hide the dropdown menu
+    });
+</script>
